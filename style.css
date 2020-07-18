@@ -30,7 +30,7 @@ body{
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: white; 
+    background: #222222; 
   }
 .container{
 	max-width: 1170px;
@@ -41,7 +41,7 @@ header{
 	width:100%;
 	left:0;
 	top:0;
-	padding:10px 15px;
+	padding:5px 15px;
 	z-index:100;
 }
 header.sticky{
@@ -212,7 +212,7 @@ h2.title::before{
 
 .about .about-content .img{
 	float: left;
-	width: 30%;
+	width: 25%;
 	padding:15px;
 }
 .about .about-content .img img{
@@ -221,7 +221,7 @@ h2.title::before{
 }
 .about .about-content .description{
 	float: left;
-	width: 70%;
+	width: 75%;
 	padding:15px;
 }
 .about .about-content .description h4{
@@ -253,8 +253,21 @@ h2.title::before{
 	margin-right:10px;
 	margin-top:20px;
 }
-
-
+.about .social-links a span{
+	background-color: white;
+	height: 35px;
+	width:35px;
+	border-radius: 5px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: #292929;
+	font-size: 20px;
+}
+.about .social-links a span:hover{
+	background-color: crimson;
+	color: white;
+}
 
 /*Service Section*/
 
@@ -280,6 +293,9 @@ h2.title::before{
 	background-color:#353535;
 	padding:30px;
 	position: relative;
+}
+.services .services-content .card .box:hover{
+	background-color:#161616;
 }
 .services .services-content .card .box::before{
 	content:'';
@@ -767,7 +783,12 @@ transform-origin: left bottom;
 	margin:15px 0px 0px;
 	font-weight:600;
 }	
-
+.about .about-content .img {
+	width: 60%;
+	height: 60%;
+	margin-left:20%;
+	margin-right: 20%;
+}
 .services .services-content .card{
 	width: 100%;
 }	
