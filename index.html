@@ -236,12 +236,12 @@
 		<div class="container">
 			<h2 class="title">Contact Me</h2>
 			<div class="contact-content">
-				<form>
-					<input type="text" placeholder="Name" />
-					<input type="text" placeholder="Email" />
-					<input type="text" placeholder="Subject" />
-					<textarea placeholder="Message"></textarea>
-					<button class="btn-light">Send Message</button>
+				<form id="submit-form" action="">
+					<input type="text" id="form-name" required name="name" placeholder="Name" />
+					<input type="text" id="form-mail" required name="email" placeholder="Email" />
+					<input type="text" id="form-phone" required name="phone" placeholder="Phone" />
+					<textarea id="form-message" name="message" required placeholder="Message"></textarea>
+					<button type="submit" class="btn-light">Send Message</button>
 				</form>
 			</div>
 		</div>
@@ -305,7 +305,6 @@
 					}
 				}
 			})
-
 			// navbar active link
 
 			$(".navbar ul li a").click(function () {
@@ -319,8 +318,25 @@
 			})
 
 		})
-
 	</script>
+	<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwYMGr6RVast6_KvNXFI2p9Ighr5He2y1kxFkVluao-FVksZdw/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+                }
+            })
+        })
+    </script>
 
 </body>
 
